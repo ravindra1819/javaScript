@@ -1,38 +1,3 @@
-
-// Arrays :
-
-// An array is a special variable that can hold multiple values at once.
-// In js array can store either same DT or diff DT together.
-
-// Instead of :
-
-let item1 = "Apple";
-let item2 = "Banana";
-let item3 = "Mango";
-
-// We use :
-
-let fruits = ["Apple", "Banana", "Mango"];
-
-// Arrays can hold :
-// Strings : ["red", "green", "blue"];
-// Numbers : [10, 20, 30];
-// Mixed : ["Vamsee", 25, true, null];
-// Objects : [{name : Vamsee, age : 26}, {name : Nobitha, age : 32}];
-
-// Why do we use Arrays :
-
-// Store list of items (products, users, orders)
-// Peforms operations like filtering, mapping, sorting...etc.
-// Handle Dynamic data from API's or DB's
-
-
-// Array Props :
-
-console.log(fruits.length);
-
-// Array methods : 
-
 const orders = [
   {
     orderId: "ORD1001",
@@ -360,29 +325,10 @@ const orders = [
   },
 ];
 
-// Total orders : length
+// Map method
 
-console.log(`Total Orders : ${orders.length}`);
-
-// Order summary : map ()
-
-const summaries = orders.map(order => `${order.customer.name} ordered ${order.items.length} items worth $${order.items[0].price}`);
-console.log(summaries);
-
-// Get only orders which are delivered : filter()
-
-const deliveredOrders = orders.filter(order => order.orderStatus === "Delivered");
-console.log(deliveredOrders);
-
-// Find a specific order by ID : find()
-
-const findOrder = orders.find(order => order.customer.name === "Vamsi Krishna");
-console.log(findOrder);
-
-// Slice : Show first 3 recent orders
-
-const top3orders = orders.slice(0, 3);
-console.log(top3orders);
+const summaries = orders.map( order => `${order.customer.name} ordered ${order.items.length} items worth of${order.items[0].price}`)
+console.log(summaries)
 
 // Splice : 
 
@@ -391,98 +337,3 @@ const numList = [10, 20, 60, 70, 80];
 numList.splice(2, 2, 30, 40, 50);
 
 console.log(numList);
-
-
-// Push : add a new order at last position of an Array :
-const order16 = {
-  orderId: "ORD1016",
-  customer: {
-    name: "Lavanya Reddy",
-    email: "lavanya.reddy@example.com",
-    phone: "+91-9876509876",
-    address: {
-      street: "Flat No. 402, Rainbow Residency",
-      city: "Bangalore",
-      state: "Karnataka",
-      pincode: 560037,
-    },
-  },
-  items: [
-    { productId: "PRD2001", name: "iPad Air 6", category: "Tablets", quantity: 1, price: 59999 },
-    { productId: "PRD2002", name: "Apple Pencil (2nd Gen)", category: "Accessories", quantity: 1, price: 10999 },
-  ],
-  payment: { mode: "Credit Card", transactionId: "TXN111223344", status: "Success" },
-  orderStatus: "Delivered",
-  deliveryDate: "2025-10-10",
-  orderDate: "2025-10-06",
-};
-
-const order17 = {
-  orderId: "ORD1017",
-  customer: {
-    name: "Mahesh Babu",
-    email: "mahesh.babu@example.com",
-    phone: "+91-9001237890",
-    address: {
-      street: "Road No. 45, Jubilee Hills",
-      city: "Hyderabad",
-      state: "Telangana",
-      pincode: 500033,
-    },
-  },
-  items: [
-    { productId: "PRD2101", name: "Sony Bravia 55inch TV", category: "Electronics", quantity: 1, price: 84999 },
-  ],
-  payment: { mode: "Net Banking", transactionId: "TXN101010101", status: "Success" },
-  orderStatus: "Delivered",
-  deliveryDate: "2025-10-11",
-  orderDate: "2025-10-08",
-};
-
-const order18 = {
-  orderId: "ORD1018",
-  customer: {
-    name: "Chaitra Rao",
-    email: "chaitra.rao@example.com",
-    phone: "+91-9867001234",
-    address: {
-      street: "4th Avenue, HSR Layout",
-      city: "Bangalore",
-      state: "Karnataka",
-      pincode: 560102,
-    },
-  },
-  items: [
-    { productId: "PRD2202", name: "Boat Airdopes 141", category: "Audio", quantity: 1, price: 1999 },
-    { productId: "PRD2203", name: "Powerbank 10000mAh", category: "Electronics", quantity: 1, price: 1299 },
-  ],
-  payment: { mode: "UPI", transactionId: "TXN202020202", status: "Failed" },
-  orderStatus: "Cancelled",
-  deliveryDate: null,
-  orderDate: "2025-10-09",
-};
-
-orders.push(order16, order17, order18);
-
-console.log(orders);
-
-
-// Pop ();
-
-const lastOrder = orders.pop();
-console.log(lastOrder);
-console.log(orders.length);
-
-// Shift & unshift :
-
-// forEach : Prints each order
-orders.forEach(order => console.log(`${order.customer.name} your order is ${order.orderStatus}`));
-
-
-// Reduce : 
-
-const cartPrices = [999, 29999, 7999, 1299];
-
-const totalCartValue = cartPrices.reduce((a, b) => a + b);
-
-console.log(totalCartValue);

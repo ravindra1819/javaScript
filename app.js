@@ -99,3 +99,6 @@ console.log(testvar.search("very"))
 
 // Difference b/w Indexof and Search
 
+console.log(testvar.indexOf("very",20))
+console.log(testvar.indexOf("very",30))
+

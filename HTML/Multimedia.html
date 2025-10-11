@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimedia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Image Section */
+    .image-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .image-gallery img {
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Audio Section */
+    .audio-section {
+      margin: 20px 0;
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 30px 0;
+    }
+
+    .video-section video {
+      border-radius: 12px;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Iframe Section */
+    .iframe-section {
+      margin: 40px auto;
+    }
+
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+      margin: 20px auto;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎵 Multimedia Showcase 🎥</h1>
+
+  <!-- Image Gallery -->
+  <section class="image-gallery">
+    <img src="/assets/images/pexels-bruna-fossile-183845208-28469559.jpg" alt="Nature Image 1" height="250" width="350">
+    <img src="/assets/images/pexels-i-sa-kilavuzoglu-2147500545-33843460.jpg" alt="Nature Image 2" height="250" width="350">
+    <img src="/assets/images/pexels-pam-crane-3712506-21384273.jpg" alt="Nature Image 3" height="250" width="350">
+  </section>
+
+  <!-- Audio Section -->
+  <section class="audio-section">
+    <h2>🎶 Background Music</h2>
+    <audio controls muted autoplay loop>
+      <source src="/assets/audio/onefinaleffortpiano.mp3" type="audio/mpeg">
+      <source src="/assets/audio/onefinaleffortpiano.ogg" type="audio/ogg">
+      <source src="/assets/audio/onefinaleffortpiano.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <h2>🎬 Sample Video</h2>
+    <video height="300" width="500" controls muted loop poster="/assets/images/ACIT.png">
+      <source src="/assets/video/13738457_1920_1080_50fps.mp4" type="video/mp4">
+      <source src="/assets/video/13738457_1920_1080_50fps.webm" type="video/webm">
+      <source src="/assets/video/13738457_1920_1080_50fps.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Iframe Section -->
+  <section class="iframe-section">
+    <h2>🌐 Embedded Pages & YouTube</h2>
+    <iframe src="/html/CoreComponents/index.html" frameborder="0" width="80%" height="400"></iframe>
+
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/xGtEE0qLuXA?si=04LjmO-UedwtnOI1"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+</body>
+
+</html>

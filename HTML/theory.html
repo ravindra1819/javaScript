@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Core Components Demo</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .box {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+        }
+        .highlight {
+            color: white;
+            background-color: green;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        #unique {
+            color: red;
+            font-weight: bold;
+            background-color: #ffe6e6;
+            padding: 5px;
+            border: 1px dashed red;
+            display: inline-block;
+        }
+        /* Inline vs Block vs Inline-block */
+        .inline-demo span {
+            background-color: yellow;
+            padding: 2px 5px;
+        }
+        .block-demo div, 
+        .block-demo p {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .inline-block-demo img, 
+        .inline-block-demo button, 
+        .inline-block-demo input {
+            margin: 5px;
+            border: 2px solid #333;
+            padding: 5px;
+        }
+        .inline-block-demo img {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Core Components Demo</h1>
+
+    <!-- Single Tags -->
+    <div class="box">
+        <h2>1. Single Tags</h2>
+        <p>These tags don’t need a closing tag:</p>
+        <img src="https://via.placeholder.com/100" alt="Sample Image">
+        <br>
+        <input type="text" placeholder="Enter your name">
+        <hr>
+    </div>
+
+    <!-- Paired Tags -->
+    <div class="box">
+        <h2>2. Paired Tags</h2>
+        <h3>This is a heading</h3>
+        <p>This is a paragraph with <strong>bold</strong> text.</p>
+        <a href="https://www.google.com" target="_blank">This is a link to Google</a>
+    </div>
+
+    <!-- Attributes -->
+    <div class="box">
+        <h2>3. Attributes</h2>
+        <p class="highlight">This uses a <b>class</b> attribute → can apply the same style to many elements.</p>
+        <p id="unique">This uses an <b>ID</b> attribute → must be unique.</p>
+        <p title="Tooltip Example">Hover here → this shows the <b>title</b> attribute.</p>
+        <a href="https://example.com" target="_blank">This link uses <b>href</b> attribute</a>
+    </div>
+
+    <!-- Elements -->
+    <div class="box">
+        <h2>4. Elements</h2>
+        <p>An element = start tag + content + end tag:</p>
+        <p><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></p>
+        <h3 class="highlight" style="background-color: black;">Styled Heading Element</h3>
+    </div>
+
+    <!-- Types of Elements -->
+    <div class="box">
+        <h2>5. Types of Elements</h2>
+
+        <h3>Inline Elements:</h3>
+        <p class="inline-demo">
+            This is <span>inline text</span> inside a paragraph. 
+            <a href="#">This is an inline link</a>.
+        </p>
+
+        <h3>Block Elements:</h3>
+        <div class="block-demo">
+            <div>This is a block element (div).</div>
+            <p>This is also a block element (paragraph).</p>
+        </div>
+
+        <h3>Inline-Block Elements:</h3>
+        <div class="inline-block-demo">
+            <button>Button</button>
+            <input type="text" value="Inline-block input">
+            <img src="https://via.placeholder.com/50" alt="Small Image">
+        </div>
+    </div>
+
+    <!-- Core Components :
+
+        Tags :
+            - Tags are nothing but predefined keywords in HTML.
+            - Every keyword is loaded with some predefined functionality.
+            - Tags are used to create HTML elements.
+
+        Syntax :  <tagName> Content </tagName>
+
+        Types of Tags :
+
+            1. Single Tags : Tags which do not require either opening or closing tag.
+                - Example : <img> , <input> , <br> , <hr> etc.
+
+            2. Paired Tags : Tags which require both opening and closing tag.
+                - Example : <h1> , <p> , <div> , <a>
+
+            
+        Attributes :
+            - Attributes are used to provide additional information about HTML elements.
+            - Attributes are always specified in the opening tag.
+            - Attributes usually come in name/value pairs like : name="value".
+
+        Class vs ID : 
+            - Class is used to apply the same styles to multiple elements.
+            - ID is used to apply styles to a single, unique element.
+            - In CSS, class selectors are denoted with a dot (.) and ID selectors with a hash (#).
+
+        Types of Attributes : 
+
+            1. Global Attributes : Attributes that can be used with any HTML element.
+                - Example : id , class , style , title , data-* etc.
+
+            2. Element Specific Attributes : Attributes that are specific to certain HTML elements.
+                - Example : href (for <a>), src (for <img>), alt (for <img>), type (for <input>) etc.
+
+
+
+        Elements :
+            - Elements are the building blocks of HTML.
+            - An element is defined by a start tag, some content, and an end tag.
+            - Example : <p>This is a paragraph.</p>
+
+                        <h1 class="heading" style="color: white; background-color: black; ">Content</h1>
+
+        Types of Elements : 
+
+            1. Inline Elements:
+            - Inline elements do not start on a new line and only take up as much width as necessary.
+            - Example : <span>, <a>, <strong>, <em> etc.
+
+            2. Block Elements:
+            - Block elements start on a new line and take up the full width available.
+            - Example : <div>, <p>, <h1>, <ul>, <section> etc.
+
+            3. Inline-Block Elements:
+            - Inline-block elements are similar to inline elements, but they can have width and height set.
+            - Example : <img>, <button>, <input> etc. -->
+
+</body>
+</html>

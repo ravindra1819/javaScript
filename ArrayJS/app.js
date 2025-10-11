@@ -13,8 +13,8 @@ const orders = [
       },
     },
     items: [
-      { productId: "PRD101", name: "iPhone 15 Pro", category: "Mobiles", quantity: 1, price: 134999 },
-      { productId: "PRD205", name: "Spigen Case", category: "Accessories", quantity: 1, price: 2499 },
+      { productId: "PRD101", name: "iPhone 15 Pro", category: "Mobiles", quantity: 1, price: 100 },
+      { productId: "PRD205", name: "Spigen Case", category: "Accessories", quantity: 1, price: 200 },
     ],
     payment: { mode: "UPI", transactionId: "TXN982341567", status: "Success" },
     orderStatus: "Delivered",
@@ -327,7 +327,14 @@ const orders = [
 
 // Map method
 
-const summaries = orders.map( order => `${order.customer.name} ordered ${order.items.length} items worth of${order.items[0].price}`)
+
+const summaries = orders.map(order => {
+  let finalPrice = 0;
+  order.items.map(item => {
+    finalPrice = finalPrice + item.price;
+  })
+  return (`${order.customer.name} ordered ${order.items.length} items worth of ${finalPrice}`)
+})
 console.log(summaries)
 
 // Splice : 
@@ -337,3 +344,19 @@ const numList = [10, 20, 60, 70, 80];
 numList.splice(2, 2, 30, 40, 50);
 
 console.log(numList);
+
+// foreach : Print each order
+
+orders.forEach(order => console.log(`${order.customer.name} your order status was ${order.orderStatus}`));
+
+// Reduce
+
+const cartPrices = [100, 200, 300, 400, 300, 400, 700, 400, 100, 400, 400, 200, 500, 300];
+
+const totalCartValue = cartPrices.reduce((a , b) => a+b);
+
+console.log(totalCartValue)
+
+// Customer paid with UPI and pincode scenario
+
+orders.map (order => console.log (`${order.customer.name} payment mode was ${order.payment.mode} and his area pincode is ${order.customer.address.pincode}`));

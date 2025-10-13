@@ -357,6 +357,18 @@ const totalCartValue = cartPrices.reduce((a , b) => a+b);
 
 console.log(totalCartValue)
 
+// pop method
+
+const lastOrder = orders.pop();
+console.log(lastOrder)
+console.log(orders.length)
+
 // Customer paid with UPI and pincode scenario
 
 orders.map (order => console.log (`${order.customer.name} payment mode was ${order.payment.mode} and his area pincode is ${order.customer.address.pincode}`));
+
+// shift and unshift
+
+const fruits = ['apple', 'banana', 'starwberry','litchi'];
+// console.log(fruits.shift());
+console.log(fruits.unshift('orange','pineapple'));

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implementation of JavaScript</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans p-6">
+
+  <h1 class="text-3xl font-bold mb-6 text-center text-indigo-700">Implementation of JavaScript</h1>
+
+  <!-- Inline JavaScript -->
+  <section class="mb-10 p-6 bg-white rounded-xl shadow-md">
+    <h2 class="text-2xl font-semibold text-indigo-600 mb-3">1. Inline JavaScript</h2>
+    <p class="mb-4">
+      Inline JavaScript is written directly inside the <code class="bg-gray-200 px-1 rounded">&lt;tag&gt;</code> of an HTML element 
+      using attributes such as <code class="bg-gray-200 px-1 rounded">onclick</code>, <code class="bg-gray-200 px-1 rounded">onmouseover</code>, etc.  
+      It is quick and useful for very small scripts, but not recommended for large projects.
+    </p>
+    <button 
+      onclick="alert('Button is clicked using Inline JS')" 
+      class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+      Click Me (Inline)
+    </button>
+  </section>
+
+  <!-- Internal JavaScript -->
+  <section class="mb-10 p-6 bg-white rounded-xl shadow-md">
+    <h2 class="text-2xl font-semibold text-indigo-600 mb-3">2. Internal JavaScript</h2>
+    <p class="mb-4">
+      Internal JavaScript is written inside a <code class="bg-gray-200 px-1 rounded">&lt;script&gt;</code> tag, usually at the bottom of the 
+      <code class="bg-gray-200 px-1 rounded">&lt;body&gt;</code>.  
+      This keeps JavaScript separate from the HTML elements and is more organized compared to inline scripting.
+    </p>
+    <button 
+      id="btn" 
+      class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+      Click Me (Internal)
+    </button>
+  </section>
+
+  <!-- External JavaScript -->
+  <section class="mb-10 p-6 bg-white rounded-xl shadow-md">
+    <h2 class="text-2xl font-semibold text-indigo-600 mb-3">3. External JavaScript</h2>
+    <p class="mb-4">
+      External JavaScript is stored in a separate file with a <code class="bg-gray-200 px-1 rounded">.js</code> extension and 
+      linked to the HTML using the <code class="bg-gray-200 px-1 rounded">&lt;script src="..."&gt;</code> tag.  
+      This is the most recommended way since it separates structure (HTML), styling (CSS), and behavior (JavaScript) — 
+      making code reusable and easier to maintain.
+    </p>
+    <button 
+      id="clickBtn" 
+      class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+      Click Me (External)
+    </button>
+  </section>
+
+  <!-- Difference Table -->
+  <section class="p-6 bg-white rounded-xl shadow-md">
+    <h2 class="text-2xl font-semibold text-indigo-600 mb-3">Difference Between Inline, Internal, and External JavaScript</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 rounded-lg">
+        <thead class="bg-indigo-100">
+          <tr>
+            <th class="border px-4 py-2 text-left">Aspect</th>
+            <th class="border px-4 py-2 text-left">Inline</th>
+            <th class="border px-4 py-2 text-left">Internal</th>
+            <th class="border px-4 py-2 text-left">External</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="border px-4 py-2">Location</td>
+            <td class="border px-4 py-2">Inside HTML tag</td>
+            <td class="border px-4 py-2">Inside &lt;script&gt; tag in same HTML file</td>
+            <td class="border px-4 py-2">In a separate <code>.js</code> file</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="border px-4 py-2">Ease of Maintenance</td>
+            <td class="border px-4 py-2">Difficult</td>
+            <td class="border px-4 py-2">Moderate</td>
+            <td class="border px-4 py-2">Easy</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="border px-4 py-2">Reusability</td>
+            <td class="border px-4 py-2">Not reusable</td>
+            <td class="border px-4 py-2">Limited</td>
+            <td class="border px-4 py-2">Highly reusable</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="border px-4 py-2">Performance</td>
+            <td class="border px-4 py-2">Loads with HTML</td>
+            <td class="border px-4 py-2">Loads with HTML</td>
+            <td class="border px-4 py-2">Can be cached by browser</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="border px-4 py-2">Best Use Case</td>
+            <td class="border px-4 py-2">Tiny scripts & testing</td>
+            <td class="border px-4 py-2">Page-specific scripts</td>
+            <td class="border px-4 py-2">Large projects & reusable code</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Internal Script -->
+  <script>
+    const button = document.getElementById("btn");
+    button.addEventListener('click', () => {
+      alert("Button is clicked using Internal JS");
+    });
+  </script>
+
+  <!-- External Script -->
+  <script src="./app.js"></script>
+
+</body>
+</html>

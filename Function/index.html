@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collapsible Sidebar</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script> <!-- for arrow icons -->
+</head>
+<body class="bg-gray-100 flex transition-all duration-300">
+
+  <!-- Sidebar -->
+  <div
+    class="sidebar bg-gray-900 text-white h-screen w-20 transition-all duration-300 ease-in-out flex flex-col justify-between fixed left-0 top-0"
+  >
+    <!-- Top Section -->
+    <div>
+      <div class="flex items-center justify-center h-16 border-b border-gray-700">
+        <span class="text-lg font-bold">⚡</span>
+      </div>
+
+      <ul class="mt-4 space-y-4 flex flex-col items-center">
+        <li class="tooltip" data-tip="Dashboard">
+          <a href="#" class="hover:bg-gray-800 p-3 rounded-lg block text-center">🏠 Home</a>
+        </li>
+        <li class="tooltip" data-tip="Projects">
+          <a href="#" class="hover:bg-gray-800 p-3 rounded-lg block text-center">📁</a>
+        </li>
+        <li class="tooltip" data-tip="Team">
+          <a href="#" class="hover:bg-gray-800 p-3 rounded-lg block text-center">👥</a>
+        </li>
+        <li class="tooltip" data-tip="Settings">
+          <a href="#" class="hover:bg-gray-800 p-3 rounded-lg block text-center">⚙️</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Toggle Button -->
+    <div class="flex items-center justify-center h-16 border-t border-gray-700">
+      <button id="toggleBtn" class="p-2 rounded-full hover:bg-gray-800 transition">
+        <i data-lucide="chevron-right" class="text-white w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div
+    class="main ml-20 flex-1 min-h-screen transition-all duration-300 ease-in-out p-6"
+  >
+    <h1 class="text-3xl font-semibold text-gray-800 mb-4">
+      Welcome to the Dashboard
+    </h1>
+    <p class="text-gray-600 leading-relaxed mb-6">
+      This is your main workspace. Click on the arrow icon to expand or collapse the sidebar.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded-lg shadow">📊 Analytics Overview</div>
+      <div class="bg-white p-4 rounded-lg shadow">💼 Recent Projects</div>
+      <div class="bg-white p-4 rounded-lg shadow">📅 Upcoming Events</div>
+    </div>
+  </div>
+
+
+  <div class="box"></div>
+
+  <script src="./app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

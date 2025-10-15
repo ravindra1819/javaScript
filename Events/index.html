@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="showAlert()">InlineEvent</button>
+
+  <button id="btn">DOMEvent</button>
+
+  <button id="loginBtn">Login</button>
+
+
+  <script>
+    function showAlert() {
+      alert(`Button Clicked..`)
+    }
+
+
+    const btn = document.getElementById("btn");
+    console.log(btn);
+    btn.onclick = () => {
+      console.log(`Button Clicked Using DOMProp`);
+    }
+
+    const loginBtn = document.getElementById("loginBtn");
+    console.log(loginBtn);
+    loginBtn.addEventListener('click', (e) => {
+      console.log(e.target.textContent);
+    });
+  </script>
+</body>
+
+</html>

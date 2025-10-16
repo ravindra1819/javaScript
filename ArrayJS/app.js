@@ -327,6 +327,7 @@ const orders = [
 
 // Map method
 
+// const summaries = orders.map(order => `${order.customer.name} ordered ${order.items.length} items worth of ${order.items[0].price}`);
 
 const summaries = orders.map(order => {
   let finalPrice = 0;

@@ -42,12 +42,12 @@ console.log("Created Element:", selfPortal);
 const navList = document.getElementById("navList");
 const offersItem = document.getElementById("offers");
 
-// // // Read text content
-// // console.log("Before Update - Offers Text:", offersItem.textContent);
+// Read text content
+// console.log("Before Update - Offers Text:", offersItem.textContent);
 
-// // // Update text content
-// // offersItem.textContent = "Mega Offers";
-// // console.log("After Update - Offers Text:", offersItem.textContent);
+// Update text content
+// offersItem.textContent = "Mega Offers";
+// console.log("After Update - Offers Text:", offersItem.textContent);
 
 // // --- INSERT ---
 // navList.insertBefore(loginItem, offersItem); // Insert Login before Offers

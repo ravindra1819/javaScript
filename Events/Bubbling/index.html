@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubbling & Capturing</title>
+</head>
+
+<body>
+
+  <button onclick="showAlert()">InlineEvent</button>
+
+  <button id="btn">DOMEvent</button>
+
+  <button id="loginBtn">Login</button>
+
+  <div id="grandParent">
+    <div id="parent">
+      <div>
+        <button id="child">ChildBubbling</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sibling">sibling</div>
+
+  <ul id="navlist">
+  </ul>
+
+  <script>
+
+    function showAlert() {
+      alert(`Button Clicked`);
+    }
+
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click',() =>{
+      console.log("DOM Event used");
+    })
+
+
+    btn.onclick = () => {
+    }
+
+    const loginBtn = document.getElementById(`loginBtn`);
+    loginBtn.addEventListener('click', (e) => {
+      console.log(`LoginButtonClicked`);
+      console.log(e);
+      console.log(e.type);
+      console.log(e.target.innerText);
+    });
+
+    // Event Buddling
+
+    const grandParent = document.getElementById('grandParent');
+    grandParent.addEventListener('click', (e) => {
+      console.log('GrandParent bubbling');
+    });
+
+    const parent = document.getElementById('parent');
+    parent.addEventListener('click', (e) => {
+      console.log('Parent bubbling');
+    });
+
+    const child = document.getElementById('child');
+    child.addEventListener('click', (e) => {
+      console.log('Child bubbling');
+    });
+
+    // Event Capturing
+    grandParent.addEventListener('click', () => {
+      console.log('GrandParent Capturing');
+    }, true);
+
+    parent.addEventListener('click', () => {
+      console.log('Parent Capturing');
+    }, true);
+
+    child.addEventListener('click', () => {
+      console.log('Child Capturing');
+    }, true);
+
+    const sibling = document.getElementById('sibling');
+    sibling.addEventListener('click', (e) => {
+      console.log('Sibiling Clicked');
+    });
+
+    // Event delegation : A technique where a single parent element handles events for multiple child elements.
+    // Instead of attaching event listeners to each child element, you attach a single event listener to the parent element.
+
+    const fruits = ['Orange', 'Banana', 'Apple', 'StrawBerry'];
+    const fruitColors = {Orange : 'Orange', Banana : 'Yellow', Apple : 'Red', StrawBerry : 'Pink', Amla : 'Purple', Berry : 'Brown'}
+    fruits.push('Amla', 'Berry');
+    const navList = document.getElementById('navlist');
+    fruits.forEach((fruit) => {
+      const li = document.createElement('li');
+      li.innerHTML = `<button style="background-color : blue; color: white;" >${fruit}</button>`;
+      navList.appendChild(li);
+    });
+
+    navList.addEventListener('click', (e) => {
+      const fvalue = e.target.innerText;
+      // console.log(typeof(fruitColors.fvalue));
+      // console.log(typeof(fruitColors[fvalue]);
+      e.target.style.backgroundColor = fruitColors[fvalue];
+      console.log(e.target.innerText);
+    });
+
+  </script>
+</body>

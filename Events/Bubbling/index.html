@@ -102,8 +102,8 @@
     });
 
     navList.addEventListener('click', (e) => {
-      const fvalue = e.target.innerText;
-      // console.log(typeof(fruitColors.fvalue));
+      const fvalue = e.target.textContent;
+      console.log(fvalue);
       // console.log(typeof(fruitColors[fvalue]);
       e.target.style.backgroundColor = fruitColors[fvalue];
       console.log(e.target.innerText);

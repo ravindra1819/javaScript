@@ -25,7 +25,7 @@ function clearErrors() {
   message.textContent = "";
 }
 function validatefirstName() {
-  if (firstName.value.length < 15) {
+  if (firstName.value.length < 3) {
     fnerror.textContent = "First name must be at least 3 characters.";
     fnerror.style.color = "red";
   }

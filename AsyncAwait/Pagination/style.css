@@ -29,7 +29,11 @@ main {
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  div{
+    width: 20% !important;
+  }
 }
+
 
 /* User Card */
 .userCard {

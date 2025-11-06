@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Section styles */
+    .section {
+      padding: 30px;
+      border-bottom: 1px solid #ccc;
+      height: 500px; /* Just to create scroll effect */
+    }
+
+    /* 1. Static (Default) */
+    .static-box {
+      background: lightgray;
+      padding: 10px;
+    }
+
+    /* 2. Relative */
+    .relative-box {
+      background: #d1e7ff;
+      position: relative;
+      top: 20px;    /* moves down 20px */
+      left: 20px;   /* moves right 20px */
+      padding: 10px;
+    }
+
+    /* 3. Absolute */
+    .absolute-container {
+      position: relative;
+      background: #fff4cc;
+      padding: 20px;
+      height: 200px;
+      margin-top: 20px;
+      border: 2px dashed #d9b300;
+    }
+    .absolute-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffe299;
+      padding: 10px;
+    }
+
+    /* 4. Fixed */
+    .fixed-box {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #ffcccc;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    /* 5. Sticky */
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background: #c8ffc8;
+      padding: 10px;
+      border: 2px solid #56a656;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FIXED stays in corner always -->
+  <div class="fixed-box">I stay fixed (Fixed)</div>
+
+  <div class="section">
+    <h2>Static Position (Default)</h2>
+    <p>The element is in its normal position and does not move.</p>
+    <div class="static-box">I am STATIC (no special positioning)</div>
+  </div>
+
+  <div class="section">
+    <h2>Relative Position</h2>
+    <p>The element moves relative to its original position.</p>
+    <div class="relative-box">I am RELATIVE (shifted from my normal spot)</div>
+  </div>
+
+  <div class="section">
+    <h2>Absolute Position</h2>
+    <p>This child is positioned relative to its nearest positioned parent.</p>
+    <div class="absolute-container">
+      Container (position: relative)
+      <div class="absolute-box">I am ABSOLUTE (placed inside corner)</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Sticky Position (Scroll Down)</h2>
+    <p>Scroll down to see me stick to the top when I reach the top edge.</p>
+    <div class="sticky-box">I become STICKY when reaching the top</div>
+    <p>Keep scrolling... 👇</p>
+    <p style="margin-top:300px;">More content here to make scrolling visible.</p>
+  </div>
+
+  <div class="section">
+    <h2>Scroll More</h2>
+    <p>You will still see the **Fixed** box on top-right.</p>
+  </div>
+
+</body>
+</html>
+
+
+
+<!-- | Position     | In Normal Flow? |  Moves When Scrolled?  | Positioned Relative To    | Real Use            |
+| ------------ | :-------------: | :--------------------: | ------------------------- | ------------------- |
+| **static**   |      ✅ Yes      |          ✅ Yes         | Normal layout             | Default layouts     |
+| **relative** |      ✅ Yes      |          ✅ Yes         | Itself                    | Minor adjustments   |
+| **absolute** |       ❌ No      |          ✅ Yes         | Nearest positioned parent | Dropdowns, badges   |
+| **fixed**    |       ❌ No      |          ❌ No          | Viewport (screen)         | Navbar, chat bubble |
+| **sticky**   |   ✅ Initially   | ⛔ Stops after sticking | Scroll container          | Sticky headers      | -->

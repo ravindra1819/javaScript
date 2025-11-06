@@ -1,0 +1,43 @@
+.static-box {
+  width: 200px;
+  height: 100px;
+  background: lightgray;
+  /* position: static;  // default, no need to write */
+}
+
+.relative-box {
+  width: 200px;
+  height: 100px;
+  background: orange;
+  position: relative;
+  top: 10px;
+  left: 15px;
+}
+
+.absolute-child {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background: purple;
+  color: white;
+  padding: 5px;
+}
+
+.parent {
+  width: 250px;
+  height: 150px;
+  background: lightblue;
+  position: relative; /* This makes child refer to this box */
+}
+
+.fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: crimson;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+

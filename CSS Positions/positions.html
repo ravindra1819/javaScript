@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Position Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    /* Section styling */
+    section {
+      padding: 60px 20px;
+      border-bottom: 2px solid #eee;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .box {
+      width: 200px;
+      height: 80px;
+      background: #ffa94d;
+      padding: 10px;
+      border-radius: 6px;
+      color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    /* STATIC */
+    .static-box {
+      position: static; /* default */
+      background: #dedede;
+    }
+
+    /* RELATIVE */
+    .relative-box {
+      position: relative;
+      top: 20px;   /* nudged down */
+      left: 20px;  /* nudged right */
+      background: #ffd43b;
+    }
+
+    /* ABSOLUTE EXAMPLE */
+    .relative-parent {
+      position: relative;
+      height: 120px;
+      background: #d0ebff;
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+    .absolute-child {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #4dabf7;
+    }
+
+    /* FIXED */
+    .fixed-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #e03131;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    /* STICKY */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background: #2f9e44;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- STICKY HEADER -->
+  <div class="sticky-header">I STICK when you scroll ↓</div>
+
+  <!-- STATIC -->
+  <section>
+    <h2>1. Static (default)</h2>
+    <div class="box static-box">Static Box</div>
+    <p>This element stays in the flow. No special positioning applied.</p>
+  </section>
+
+  <!-- RELATIVE -->
+  <section>
+    <h2>2. Relative (slightly shifted)</h2>
+    <div class="box relative-box">Relative Box</div>
+    <p>Notice how this box moves slightly from its normal position but still keeps its original space.</p>
+  </section>
+
+  <!-- ABSOLUTE -->
+  <section>
+    <h2>3. Absolute (position inside parent)</h2>
+    <div class="relative-parent">
+      Parent (relative)
+      <div class="box absolute-child">Absolute Child</div>
+    </div>
+    <p>The blue box is positioned based on its parent, not the screen.</p>
+  </section>
+
+  <!-- Add extra scroll space -->
+  <section>
+    <h2>Scroll to see FIXED button stay visible</h2>
+    <p>
+      Keep scrolling down...<br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra...
+      <br><br>Scroll more...<br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque viverra...
+      <br><br>Scrolling...<br><br>
+      Lorem ipsum...
+    </p>
+  </section>
+
+  <!-- FIXED BUTTON -->
+  <div class="fixed-button">
+    Fixed (Always Visible)
+  </div>
+
+  <!-- Add more space for scrolling -->
+  <section>
+    <p>Keep scrolling to observe sticky + fixed behavior.</p>
+  </section>
+
+</body>
+</html>
